@@ -1,9 +1,25 @@
 #include <stdio.h>
 
+#define max 10
+
 int main() 
 {
-   int n1, n2;
-   scanf("%i %i", &n1, &n2);
-   printf("SOMA = %i\n", n1+n2);
+   int n, vetor[max], maior, menor;
+   scanf("%i", &n);
+   for(int i=0; i<n; i++)
+   {
+	   scanf("%i", &vetor[i]);
+	   if (i > 0)
+	   {
+		   maior = maior > vetor[i] ? maior : vetor[i];
+		   menor = menor < vetor[i] ? menor : vetor[i];
+	   }
+	   else
+	   {
+		   maior = vetor[i];
+		   menor = vetor[i];
+	   }
+   }
+   printf("\nMaior = %i\nMenor: = %i\n", maior, menor);
    return 0;
 }
